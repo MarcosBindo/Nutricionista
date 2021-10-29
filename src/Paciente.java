@@ -24,11 +24,11 @@ public class Paciente extends Usuario {
     }
 
     public void agregarColacion(String colacion){
-        this.plan.agregarColacion(colacion);
+        this.plan.verificarColacion(colacion);
     }
     public void agregarBebida(String bebida) {
         // agregar una comida a la rutina del plan
-        this.plan.agregarBebida(bebida);
+        this.plan.verificarBebidas(bebida);
     }
 
     public void agregarObjetivo(String objetivo){
@@ -44,7 +44,9 @@ public class Paciente extends Usuario {
         System.out.println("Nombre del paciente: "+ getNombre() +" "+ getApellido());
         System.out.println("Peso Inicial: "+ this.plan.getPesoInicial() + " | Peso actual: " + getPesoActual());
         System.out.println("Cintura Inicial: "+ this.plan.getCinturaInicial()+ " | Cintura Actual: "+ getCinturaActual());
-        plan.mostrarObjetivos();              
+        plan.mostrarObjetivos();      
+        plan.mostrarConsumidos();
+        
     }
 
     public void vincularPlan(Plan plan) {

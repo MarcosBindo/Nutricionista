@@ -46,6 +46,16 @@ public class Profesional extends Usuario{
         System.out.println("\nObservaciones: " + observaciones);
     }
 
+    public void agregarOpcionColacion(Plan plan,String colacion){
+        int indexPlan = planes.indexOf(plan);
+        this.planes.get(indexPlan).addColacion(colacion);
+    }
+    
+    public void agregarOpcionBebida(Plan plan ,String bebida) {
+        int indexPlan = planes.indexOf(plan);
+        this.planes.get(indexPlan).addBebida(bebida);
+    }
+
     public String getEspecialidad() {
         return especialidad;
     }

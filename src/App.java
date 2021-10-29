@@ -9,6 +9,15 @@ public class App {
         Plan plan1 = prof1.diseñarPlan(psnt1.getEdad(), psnt1.getPesoActual(), psnt1.getCinturaActual(), 7, "quemar grasa", psnt1);
         Plan plan2 = prof1.diseñarPlan(psnt2.getEdad(), psnt2.getPesoActual(), psnt2.getCinturaActual(), 14, "ganar musculo", psnt2);
 
+       
+        prof1.agregarOpcionColacion(plan1, "barra de cereal");
+        prof1.agregarOpcionColacion(plan1, "manzana");
+        prof1.agregarOpcionColacion(plan1, "banana");
+
+        prof1.agregarOpcionBebida(plan1, "agua");
+        prof1.agregarOpcionBebida(plan1, "jugo de manzana");
+        prof1.agregarOpcionBebida(plan1, "agua tonica");
+
         psnt1.agregarObjetivo("Bajar 3kg");
         psnt1.agregarObjetivo("Quemar 2% de grasa");
 
@@ -19,6 +28,10 @@ public class App {
         psnt1.agregarRutinaDelDia(new Consumible("tostadas con queso"), new AC("Pollo con verduras", 30,0, 70), new Consumible("Barrita de cereal"), new AC("Carne al horno", 30,0,70));
         psnt1.agregarRutinaDelDia(new Consumible("tostadas con queso"), new AC("Pollo con verduras", 30,0, 70), new Consumible("Barrita de cereal"), new AC("Carne al horno", 30,0,70));
         psnt1.agregarRutinaDelDia(new Consumible("tostadas con queso"), new AC("Pollo con verduras", 30,0, 70), new Consumible("Barrita de cereal"), new AC("Carne al horno", 30,0,70));
+        
+        psnt1.agregarBebida("agua");
+        psnt1.agregarColacion("chocolate");
+        psnt1.agregarBebida("gaseosa");
 
         psnt2.agregarObjetivo("Bajar 5k");
         psnt2.agregarObjetivo("Ganar 3% de musculatura");

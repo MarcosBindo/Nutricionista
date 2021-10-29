@@ -10,7 +10,9 @@ public class Plan {
     private Calificacion calificacion;
     private Necesidad necesidad;
     
-    private ArrayList<String> colacionYbebidas;
+    private ArrayList<String> consumidos;
+    private ArrayList<String> colaciones;
+    private ArrayList<String> bebidas;
     private ArrayList<String> objetivos;
     private ArrayList<RutinaDiaria> rutinaGeneral;
     
@@ -23,6 +25,7 @@ public class Plan {
             this.inicializar(duracion, necesidad);
             this.rutinaGeneral = new ArrayList<RutinaDiaria>();
             this.observaciones = observaciones;
+            this.consumidos = new ArrayList<String>();
         }
 
     public enum Duracion{
@@ -88,7 +91,8 @@ public class Plan {
 
     private void inicializar(int duracion, String necesidad){
         this.objetivos = new ArrayList<String>();
-        this.colacionYbebidas = new ArrayList<String>();
+        this.colaciones = new ArrayList<String>();
+        this.bebidas = new ArrayList<String>();
 
         switch(duracion){
             case 7:
@@ -137,8 +141,7 @@ public class Plan {
             }
         }else{
             System.out.println("Ya agregaste todas las rutinas");
-            
-        }
+            }
     }
 
     public boolean finalRutina(ArrayList<RutinaDiaria> rutinaGeneral){
@@ -158,20 +161,51 @@ public class Plan {
             System.out.println("Cena "+getCount()+"/"+ duracion.getDias()+" agregada: Tu cena no cumple correctamente con el plan");
         }   
     }
-
-    public void agregarColacion(String colacion){
-        this.colacionYbebidas.add(colacion);
+    
+    public void mostrarColaciones(){
+        System.out.println("\nColaciones permitidas: ");
+        for (int i = 0; i < colaciones.size(); i++) {
+            System.out.println("-"+colaciones.get(i));
+        }
     }
-    public void agregarBebida(String bebida){
-        this.colacionYbebidas.add(bebida);
-    }
-    public void mostrarColacionesyBebidas(){
-        System.out.println("\nColaciones y Bebidas permitidas: ");
-        for (int i = 0; i < colacionYbebidas.size(); i++) {
-            System.out.println("-"+colacionYbebidas.get(i));
+    public void mostrarBebidas(){
+        System.out.println("\nBebidas Disponibles: ");
+        for (int i = 0; i < bebidas.size(); i++) {
+            System.out.println("-"+bebidas.get(i));
         }
     }
 
+    public void addColacion(String colacion){
+            this.colaciones.add(colacion);
+    }
+
+    public void addBebida(String bebida){
+            this.bebidas.add(bebida);           
+    }
+
+    public void verificarColacion(String colacion){
+        if(colaciones.contains(colacion)){
+            this.consumidos.add(colacion);
+            System.out.println("Colacion agregada correctamente");
+        }else{
+            System.out.println("La colacion no esta permitida");
+        }
+    }
+     public void verificarBebidas(String bebida){
+        if(bebidas.contains(bebida)){
+            this.consumidos.add(bebida);
+        System.out.println("Bebida agregada correctamente");
+    }else{
+        System.out.println("La bebida no esta permitida");
+    }
+     }
+
+     public void mostrarConsumidos(){
+         System.out.println("Bebidas y colaciones ingeridas: ");
+         for (int i = 0; i < consumidos.size(); i++) {
+             System.out.println("-"+consumidos.get(i));
+         }
+     }
     
     public void establecerObjetivo(String objetivo){
         this.objetivos.add(objetivo);

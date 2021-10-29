@@ -23,7 +23,6 @@ public class Paciente extends Usuario {
         this.plan.agregarRutina(desayuno, almuerzo, merienda, cena);
     }
 
-
     public void agregarColacion(String colacion){
         this.plan.agregarColacion(colacion);
     }
@@ -42,6 +41,7 @@ public class Paciente extends Usuario {
 
         System.out.println("[PLAN TERMINADO]");
         System.out.println("Resultados: ");
+        System.out.println("Nombre del paciente: "+ getNombre() +" "+ getApellido());
         System.out.println("Peso Inicial: "+ this.plan.getPesoInicial() + " | Peso actual: " + getPesoActual());
         System.out.println("Cintura Inicial: "+ this.plan.getCinturaInicial()+ " | Cintura Actual: "+ getCinturaActual());
         plan.mostrarObjetivos();              

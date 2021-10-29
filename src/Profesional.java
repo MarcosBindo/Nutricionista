@@ -33,7 +33,7 @@ public class Profesional extends Usuario{
        this.planes.add(plan);
     }
 
-    public void calificar(Plan plan,String calificacion){
+    public void calificar(Plan plan,String calificacion, String observaciones){
         int indexPlan = planes.indexOf(plan);
         this.planes.get(indexPlan).calificar(calificacion);
         
@@ -42,6 +42,8 @@ public class Profesional extends Usuario{
         }else{
             System.out.println("No se ingreso calificacion");;
         }
+
+        System.out.println("\nObservaciones: " + observaciones);
     }
 
     public String getEspecialidad() {

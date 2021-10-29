@@ -22,6 +22,7 @@ public class Plan {
             this.objetivos = new ArrayList<String>();
             this.inicializar(duracion, necesidad);
             this.rutinaGeneral = new ArrayList<RutinaDiaria>();
+            this.observaciones = observaciones;
         }
 
     public enum Duracion{
@@ -39,7 +40,7 @@ public class Plan {
     }
 
     public enum Calificacion{
-        EXELENTE("exelente", 3), BUENA("buena", 2), REGULAR("regular", 2);
+        EXCELENTE("exelente", 3), BUENA("buena", 2), REGULAR("regular", 2);
 
         private String calificacion;
         private int numeral;
@@ -115,7 +116,7 @@ public class Plan {
         calificacion = calificacion.trim().toLowerCase();
         switch(calificacion){
             case "excelente":
-                this.calificacion = Calificacion.EXELENTE;
+                this.calificacion = Calificacion.EXCELENTE;
                 break;
             case "buena":
                 this.calificacion = Calificacion.BUENA;
@@ -186,7 +187,6 @@ public class Plan {
         }
     }
 
-
     public ArrayList<String> getObetivos() {
         return objetivos;
     }
@@ -199,11 +199,9 @@ public class Plan {
     public double getPesoInicial() {
         return pesoInicial;
     }
-
     public void realizarObservaciones(String obs){
         this.observaciones = obs;
     }
-
     public void setCinturaInicial(double cinturaInicial) {
         this.cinturaInicial = cinturaInicial;
     }
@@ -216,16 +214,20 @@ public class Plan {
     public Duracion getDuracion() {
         return duracion;
     }
-
     public void setDuracion(Duracion duracion) {
         this.duracion = duracion;
     }
     public static AtomicInteger getCount() {
         return count;
     }
-
     public Calificacion getCalificacion() {
         return calificacion;
+    }
+    public String getObservaciones() {
+        return observaciones;
+    }
+    public void setNecesidad(Necesidad necesidad) {
+        this.necesidad = necesidad;
     }
     
 }

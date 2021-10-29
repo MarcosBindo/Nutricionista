@@ -9,11 +9,6 @@ public class App {
         Plan plan1 = prof1.diseñarPlan(psnt1.getEdad(), psnt1.getPesoActual(), psnt1.getCinturaActual(), 7, "quemar grasa", psnt1);
         Plan plan2 = prof1.diseñarPlan(psnt2.getEdad(), psnt2.getPesoActual(), psnt2.getCinturaActual(), 14, "ganar musculo", psnt2);
 
-        /*administrador.darAltaBebida(plan1,"Agua");
-        administrador.darAltaBebida(plan1,"Jugo de manzana");
-        administrador.darAltaColacion(plan1,"Barra de cereal");
-        administrador.darAltaColacion(plan1, "Chocoarroz");*/
-
         psnt1.agregarObjetivo("Bajar 3kg");
         psnt1.agregarObjetivo("Quemar 2% de grasa");
 
@@ -45,16 +40,11 @@ public class App {
         psnt2.agregarRutinaDelDia(new Consumible("Barra de cereal"), new AC("Almuerzo",30,20,50), new Consumible("Mate"), new AC("cena", 30, 20, 50));
 
         psnt1.terminarPlan(70,60);
-        prof1.calificar(plan1, "regular");
+        prof1.calificar(plan1, "ex", "Bien respetada las comidas, proximo plan agregar un poco mas de verdura");
         psnt1.descinvularPlan();
 
         psnt2.terminarPlan(14, 50);
-        prof1.calificar(plan2, "buena");
-        psnt1.descinvularPlan();
-        
-        
-
-
-       
-}
+        prof1.calificar(plan2, "buena","Ser mas consistente con el ejercicio");
+        psnt1.descinvularPlan();     
+    }
 }
